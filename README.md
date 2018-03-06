@@ -3,10 +3,21 @@
 This repo contains various examples using Ansible for Infoblox Network Identity Operating System (NIOS).
 
 # Table of Contents
-  - [Ansible Module Examples](Ansible_Module_Examples)
-  - [Configuring a IPv4 Network with nios_network](Configuring_a_IPv4_Network_with_nios_network)
+  - [Ansible Module Examples](#ansible-module-examples)
+    - [Configuring a IPv4 Network with nios_network](#configuring-a-ipv4-network-with-nios_network)
+    - [Additional Examples](#additional-examples)
+  - [Ansible Lookup Plugin Examples](#ansible-lookup-plugin-examples)
+    - [Get a host record](#get-a-host-record)
+    - [Get a network view object](#get-a-network-view-object)
 
 ## Ansible Module Examples
+
+There are 5 modules that have been added to Ansible 2.5.  They can be currently seen in the devel branch of the documentation:
+  - [nios_host_record](http://docs.ansible.com/ansible/devel/modules/nios_host_record_module.html) - for configuring host records
+  - [nios_network](http://docs.ansible.com/ansible/devel/modules/nios_network_module.html) - for configuring networking objects
+  - [nios_network_view](http://docs.ansible.com/ansible/devel/modules/nios_network_view_module.html) - for configuring networking views
+  - [nios_dns_view](http://docs.ansible.com/ansible/devel/modules/nios_dns_view_module.html) - for configuring DNS views
+  - [nios_zone](http://docs.ansible.com/ansible/devel/modules/nios_zone_module.html) - for configuring DNS zones
 
 ### Configuring a IPv4 Network with nios_network
 
@@ -33,7 +44,9 @@ There are 3 other playbooks in the **module_playbooks** directory that can be us
 
 ## Ansible Lookup Plugin Examples
 
-## Get a host record
+The full documentation for the NIOS lookup plugin can be found here: [http://docs.ansible.com/ansible/devel/plugins/lookup/nios.html](http://docs.ansible.com/ansible/devel/plugins/lookup/nios.html)
+
+### Get a host record
 
 ```
     - name: fetch host leaf01
@@ -47,7 +60,7 @@ There are 3 other playbooks in the **module_playbooks** directory that can be us
 
 The full playbook can be found here: [lookup_playbooks/get_host_record.yml](get_host_record.yml)
 
-## Get a network view object
+### Get a network view object
 
 ```
     - name: fetch all networkview objects
