@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: configure an ipv4 host record
+      nios_host_record:
+        name: testhost
+        ipv4:
+          - address: "192.168.10.200"
+        state: present
+        provider: "{{nios_provider}}"

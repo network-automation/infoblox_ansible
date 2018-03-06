@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: fetch host leaf01
+      set_fact:
+        host: "{{ lookup('nios', 'record:host', filter={'name': 'leaf01'}, provider=nios_provider) }}"
+
+    - name: check the leaf01 return variable
+      debug:
+        var: host
+
+    - name: debug specific variable (ipv4 address)
+      debug:
+        var: host.ipv4addrs[0].ipv4addr
+
+    - name: fetch host leaf02
+      set_fact:
+        host: "{{ lookup('nios', 'record:host', filter={'name': 'leaf02'}, provider=nios_provider) }}"
+
+    - name: check the leaf02 return variable
+      debug:
+        var: host

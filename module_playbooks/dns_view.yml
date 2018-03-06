@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: configure a new dns view instance
+      nios_dns_view:
+        name: ansible-dns
+        network_view: default
+        comment: this is an example comment
+        state: present
+        provider: "{{nios_provider}}"

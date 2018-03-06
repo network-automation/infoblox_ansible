@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: set dhcp options for a network
+      nios_network:
+        network: 192.168.100.0/24
+        comment: sean put a comment here
+        options:
+          - name: domain-name
+            value: ansible.com
+        state: present
+        provider: "{{nios_provider}}"

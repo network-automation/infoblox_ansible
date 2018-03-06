@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: configure a dns zone on the system
+      nios_zone:
+        name: testhost
+        state: present
+        view: ansible-dns
+        provider: "{{nios_provider}}"
