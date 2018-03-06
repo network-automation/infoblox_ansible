@@ -33,14 +33,14 @@ There are 5 modules that have been added to Ansible 2.5.  They can be currently 
         provider: "{{nios_provider}}"
 ```
 
-The full playbook can be found here: [module_playbooks/configure_network.yml](configure_network.yml)
+The full playbook can be found here: [module_playbooks/configure_network.yml](module_playbooks/configure_network.yml)
 
 ### Additional Examples
 
 There are 3 other playbooks in the **module_playbooks** directory that can be used as examples:
-  - [module_playbooks/dns_instance.yml](dns_instance.yml) - configure a dns zone on the system
-  - [module_playbooks/dns_view.yml](dns_view.yml) - configure a new dns view instance
-  - [module_playbooks/host_record.yml](host_record.yml) - configure an ipv4 host record
+  - [module_playbooks/dns_instance.yml](module_playbooks/dns_instance.yml) - configure a dns zone on the system
+  - [module_playbooks/dns_view.yml](module_playbooks/dns_view.yml) - configure a new dns view instance
+  - [module_playbooks/host_record.yml](module_playbooks/host_record.yml) - configure an ipv4 host record
 
 ## Ansible Lookup Plugin Examples
 
@@ -58,7 +58,7 @@ The full documentation for the NIOS lookup plugin can be found here: [http://doc
         var: host
 ```
 
-The full playbook can be found here: [lookup_playbooks/get_host_record.yml](get_host_record.yml)
+The full playbook can be found here: [lookup_playbooks/get_host_record.yml](lookup_playbooks/get_host_record.yml)
 
 ### Get a network view object
 
@@ -72,7 +72,7 @@ The full playbook can be found here: [lookup_playbooks/get_host_record.yml](get_
         var: networkviews
 ```
 
-The full playbook can be found here: [lookup_playbooks/get_networkviews.yml](get_networkviews.yml)
+The full playbook can be found here: [lookup_playbooks/get_networkviews.yml](lookup_playbooks/get_networkviews.yml)
 
 ---
 ![Red Hat Ansible Automation](images/rh-ansible-automation.png)
