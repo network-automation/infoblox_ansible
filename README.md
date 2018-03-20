@@ -19,7 +19,7 @@ There are 5 modules that have been added to Ansible 2.5.  They can be currently 
   - [nios_dns_view](http://docs.ansible.com/ansible/devel/modules/nios_dns_view_module.html) - for configuring DNS views
   - [nios_zone](http://docs.ansible.com/ansible/devel/modules/nios_zone_module.html) - for configuring DNS zones
 
-### Configuring a IPv4 Network with nios_network
+### Configuring an IPv4 Network with nios_network
 
 ```yaml
     - name: set dhcp options for a network
