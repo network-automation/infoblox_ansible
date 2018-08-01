@@ -12,12 +12,13 @@ This repo contains various examples using Ansible for Infoblox Network Identity 
 
 ## Ansible Module Examples
 
-There are 5 modules that have been added to Ansible 2.5.  They can be currently seen in the devel branch of the documentation:
-  - [nios_host_record](http://docs.ansible.com/ansible/devel/modules/nios_host_record_module.html) - for configuring host records
-  - [nios_network](http://docs.ansible.com/ansible/devel/modules/nios_network_module.html) - for configuring networking objects
-  - [nios_network_view](http://docs.ansible.com/ansible/devel/modules/nios_network_view_module.html) - for configuring networking views
-  - [nios_dns_view](http://docs.ansible.com/ansible/devel/modules/nios_dns_view_module.html) - for configuring DNS views
-  - [nios_zone](http://docs.ansible.com/ansible/devel/modules/nios_zone_module.html) - for configuring DNS zones
+The full list of NIOS modules can be found at the [NIOS module list](https://docs.ansible.com/ansible/latest/modules/list_of_net_tools_modules.html#net-tools-modules)
+
+In addition there are the following lookup plugins:
+
+* [nios](https://docs.ansible.com/ansible/latest/plugins/lookup/nios.html) - Query Infoblox NIOS objects
+* [nios_next_ip](https://docs.ansible.com/ansible/latest/plugins/lookup/nios_next_ip.html) - Return the next available IP address for a network
+
 
 ### Configuring an IPv4 Network with nios_network
 
@@ -48,7 +49,7 @@ The full documentation for the NIOS lookup plugin can be found here: [http://doc
 
 ### Get a host record
 
-```
+```yaml
     - name: fetch host leaf01
       set_fact:
         host: "{{ lookup('nios', 'record:host', filter={'name': 'leaf01'}, provider=nios_provider) }}"
@@ -62,7 +63,7 @@ The full playbook can be found here: [lookup_playbooks/get_host_record.yml](look
 
 ### Get a network view object
 
-```
+```yaml
     - name: fetch all networkview objects
       set_fact:
         networkviews: "{{ lookup('nios', 'networkview', provider=nios_provider) }}"
